@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agridev — Farmers & Buyers Marketplace</title>
+  <meta name="description" content="Agridev connects local farmers directly with buyers — consumers, restaurants and markets. Static demo site." />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+  <div class="brand">Agridev</div>
+      <nav class="nav">
+        <a href="#features">Why AgriLink</a>
+        <a href="#market">Marketplace</a>
+        <a href="#farmers">For Farmers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn btn-primary" id="open-market">Explore</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Direct trade between local farmers and buyers</h1>
+          <p>Promoting food security, fair pricing, and reduced post-harvest losses. Discover fresh produce directly from the source.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" id="cta-explore">Browse Market</button>
+            <a class="btn btn-ghost" href="#contact">Get Support</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>100+</strong> Farmers</li>
+            <li><strong>500+</strong> Listings</li>
+            <li><strong>0%</strong> Middlemen</li>
+          </ul>
+        </div>
+        <div class="hero-card">
+          <div class="hero-image-container">
+            <img src="assets/photos/fresh produce.jpg" alt="Fresh produce" class="hero-image" data-fallback="assets/produce-placeholder.png" />
+            <div class="hero-image-overlay">
+              <div class="freshness-badge">Farm Fresh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container features">
+      <h2>Why AgriLink?</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Fair pricing</h3>
+          <p>Buyers connect directly with farmers for transparent pricing and fairer returns.</p>
+        </div>
+        <div class="feature">
+          <h3>Reduce wastage</h3>
+          <p>Quick listing and local pickup options reduce post-harvest losses.</p>
+        </div>
+        <div class="feature">
+          <h3>Support communities</h3>
+          <p>Local trade keeps money in the community and supports smallholders.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="market" class="container market">
+      <div class="market-head">
+        <h2>Marketplace</h2>
+        <div class="market-controls">
+          <input id="search" placeholder="Search produce, farmer or location..." />
+          <select id="category">
+            <option value="all">All categories</option>
+            <option value="fruits">Fruits</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="grains">Grains</option>
+          </select>
+        </div>
+      </div>
+      <div id="products" class="product-grid" aria-live="polite">
+        <!-- JS will populate product cards here -->
+      </div>
+    </section>
+
+    <section id="farmers" class="container farmers">
+      <h2>For Farmers</h2>
+      <p>Simple listing, clear fees (none in this demo), and buyer matching. Add produce with images and pick-up or delivery options.</p>
+      <div class="cards">
+        <div class="card small">
+          <h4>List quickly</h4>
+          <p>Easy form to add your harvest and availability.</p>
+        </div>
+        <div class="card small">
+          <h4>Manage offers</h4>
+          <p>Negotiate directly with buyers using in-app messages (demo).</p>
+        </div>
+        <div class="card small">
+          <h4>Training & support</h4>
+          <p>Access resources on storage, packing, and fair trade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact & Inquiries</h2>
+      <form id="contact-form" class="contact-form" autocomplete="off">
+        <div class="form-row">
+          <label>Name <input type="text" id="name" required /></label>
+          <label>Email <input type="email" id="email" required /></label>
+        </div>
+        <label>Message <textarea id="message" rows="4" required></textarea></label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send Inquiry</button>
+          <button class="btn btn-ghost" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+  <div>© <span id="year"></span> Agridev — Connecting farmers & buyers</div>
+      <div class="social">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product detail modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Lunr.js for client-side search (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
